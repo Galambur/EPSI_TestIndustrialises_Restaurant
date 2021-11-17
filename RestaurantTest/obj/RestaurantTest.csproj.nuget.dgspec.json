@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj": {}
+  },
+  "projects": {
+    "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+        "projectName": "RestaurantTest",
+        "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+        "packagesPath": "C:\\Users\\gaell\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\gaell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net50": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net50": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

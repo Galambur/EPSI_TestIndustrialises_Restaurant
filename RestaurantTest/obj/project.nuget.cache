@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "P/+5sPQ/bbG5+ahXpSBNpdR7LxDuC9gGq5sskco1QA7wcYucnd5af8PR0Nt2BCOsNCC5KMnWe9cpod2kSo2PIQ==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gaell\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\gaell\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
+    "C:\\Users\\gaell\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",
+    "C:\\Users\\gaell\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
+    "C:\\Users\\gaell\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}
