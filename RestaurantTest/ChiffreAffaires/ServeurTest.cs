@@ -26,7 +26,7 @@ namespace LeGrandRestaurantTest
             var serveur = new Serveur();
 
             // quand il prend une commande 
-            var commande = new Commande(0);
+            var commande = new Commande(20);
             serveur.prendCommande(commande);
 
             // alors son chiffre d'affaire est le montant de celle-ci
@@ -38,13 +38,12 @@ namespace LeGrandRestaurantTest
         {
             //ÉTANT DONNÉ un serveur ayant déjà pris une commande
 			var serveur = new Serveur();
-			var commande1 = new Commande(0);
+			var commande1 = new Commande(5);
 			serveur.prendCommande(commande1);
 			
 			//QUAND il prend une nouvelle commande
-			var commande2 = new Commande(0);
+			var commande2 = new Commande(10);
 			serveur.prendCommande(commande2);
-			
 			
 			//ALORS son chiffre d'affaires est la somme des deux commandes
 			var sommeCommandes = commande1.montant + commande2.montant;
