@@ -9,8 +9,6 @@ namespace LeGrandRestaurant
         private readonly List<Serveur> _serveurs;
         private readonly Table[] _tables;
 
-        public Restaurant() { }
-
         public Restaurant(params Table[] tables)
         {
             _tables = tables;
@@ -24,7 +22,7 @@ namespace LeGrandRestaurant
 
         public IEnumerable<Serveur> getServeurs()
         {
-            return this._serveurs;
+            return _serveurs;
         }
 
         public void debuterService()

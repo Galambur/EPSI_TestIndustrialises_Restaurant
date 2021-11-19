@@ -7,7 +7,10 @@ namespace LeGrandRestaurantTest
     [TestFixture]
     class FranchiseTest
     {
-        [TestCase(0, 1, 2)]
+        [TestCase(0, 0, 0)]
+        [TestCase(0, 1, 0)]
+        [TestCase(1, 0, 0)]
+        [TestCase(1, 1, 0)]
         public void CheckChiffreDAffaireFranchise(int nbRestaurants, int nbServeurs, int montant)
         {
             // ÉTANT DONNÉ une franchise ayant X restaurants de Y serveurs chacun
@@ -18,12 +21,10 @@ namespace LeGrandRestaurantTest
                 for (int j = 0; j < nbServeurs; j++)
                 {
                     var s = new Serveur();
-                    s.prendCommande(new Commande(montant));
                     restaurant.addServeur(s);
                 }
                 restaurants.Add(restaurant);
             }
-            
             var franchise = new Franchise(restaurants);
 
             // QUAND tous les serveurs prennent une commande d'un montant Z

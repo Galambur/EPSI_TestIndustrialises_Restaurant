@@ -2,21 +2,16 @@
 {
     public class Commande
     {
-        public int montant;
+        private double _montant;
 
-        public Commande(int montant)
+        public Commande(double montant)
         {
-            this.montant = montant;
+            this._montant = montant;
         }
 
-        public int getMontant()
+        public double getMontant()
         {
-            return this.montant;
-        }
-
-        public void setMontant(int montant)
-        {
-            this.montant = montant;
+            return this._montant;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace LeGrandRestaurantTest
 			serveur.prendCommande(commande2);
 			
 			//ALORS son chiffre d'affaires est la somme des deux commandes
-			var sommeCommandes = commande1.montant + commande2.montant;
+			var sommeCommandes = commande1.getMontant() + commande2.getMontant();
 			Assert.That(serveur.getChiffreDAffaire(), Is.EqualTo(sommeCommandes));
         }
     }

@@ -10,7 +10,7 @@ namespace LeGrandRestaurant
 
         public Serveur()
         {
-
+            this._commandes = new List<Commande>();
         }
 
         public double getChiffreDAffaire()
@@ -18,7 +18,7 @@ namespace LeGrandRestaurant
             double chiffreDaffaire = 0;
             foreach(var commande in _commandes)
             {
-                chiffreDaffaire = chiffreDaffaire + commande.montant;
+                chiffreDaffaire = chiffreDaffaire + commande.getMontant();
             }
             return chiffreDaffaire;
         }
