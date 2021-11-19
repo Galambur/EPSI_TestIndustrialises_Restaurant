@@ -6,6 +6,7 @@ namespace LeGrandRestaurant
 {
     public class Restaurant
     {
+        private Menu _menu;
         private readonly List<Serveur> _serveurs;
         private readonly Table[] _tables;
 
@@ -45,5 +46,15 @@ namespace LeGrandRestaurant
         {
             return _tables.Where(m => m.estLibre);
         }
+
+        internal void ImposerMenu(Menu menu)
+        {
+            _menu = new MenuFranchisé(menu);
+        }
+
+        public decimal obtenirPrix(Plat plat) => _menu.ObtenirPrix(plat);
+
+        public void fixerPrix(Plat plat, decimal prixRestaurant)
+            => _menu.fixerPrix(plat, prixRestaurant);
     }
 }
