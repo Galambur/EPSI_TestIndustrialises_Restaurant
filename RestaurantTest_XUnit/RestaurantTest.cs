@@ -1,8 +1,9 @@
 using System.Collections.Generic;
-using Xunit;
 using LeGrandRestaurant;
+using Xunit;
+using FluentAssertions;
 
-namespace RestaurantTest_XUnit
+namespace LeGrandRestaurantTest
 {
     public class RestaurantTest
     {
@@ -30,7 +31,7 @@ namespace RestaurantTest_XUnit
             }
 
             // ALORS le chiffre d'affaires de la franchise est X * Y
-            Assert.Equal(franchise.getChiffreDAffaire(), (nombreServeurs * montant));
+            franchise.getChiffreDAffaire().Should().Be(nombreServeurs * montant);
         }
     }
 }
