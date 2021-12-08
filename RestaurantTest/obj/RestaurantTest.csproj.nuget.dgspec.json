@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj": {}
+    "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj": {
+    "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+        "projectUniqueName": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj",
         "projectName": "RestaurantTest",
-        "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
-        "packagesPath": "C:\\Users\\gaell\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\obj\\",
+        "projectPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+        "packagesPath": "C:\\Users\\maxime\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gaell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +31,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
-                "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
+              "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
+                "projectPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
               }
             }
           }
@@ -76,21 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
+    "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+        "projectUniqueName": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
         "projectName": "LeGrandRestaurant",
-        "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
-        "packagesPath": "C:\\Users\\gaell\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\obj\\",
+        "projectPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+        "packagesPath": "C:\\Users\\maxime\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gaell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
