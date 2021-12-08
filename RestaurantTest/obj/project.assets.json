@@ -4969,20 +4969,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gaell\\.nuget\\packages\\": {}
+    "C:\\Users\\utilisateur\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+      "projectUniqueName": "C:\\Users\\utilisateur\\Source\\Repos\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj",
       "projectName": "RestaurantTest",
-      "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
-      "packagesPath": "C:\\Users\\gaell\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\obj\\",
+      "projectPath": "C:\\Users\\utilisateur\\Source\\Repos\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+      "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\utilisateur\\Source\\Repos\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\gaell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -4995,8 +5003,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
-              "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
+            "C:\\Users\\utilisateur\\Source\\Repos\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
+              "projectPath": "C:\\Users\\utilisateur\\Source\\Repos\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
             }
           }
         }
