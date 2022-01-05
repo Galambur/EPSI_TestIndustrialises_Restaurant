@@ -1,21 +1,25 @@
-﻿using NUnit.Framework;
-using LeGrandRestaurant;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using LeGrandRestaurant;
 
-namespace LeGrandRestaurantTest
+
+namespace ms
 {
-    [TestFixture]
-    class FranchiseTest
+    [TestClass]
+    public class FranchiseTest
     {
-        [TestCase(0, 0, 0)]
-        [TestCase(0, 1, 0)]
-        [TestCase(1, 0, 0)]
-        [TestCase(1, 1, 0)]
+        [DataTestMethod]
+        [DataRow(0, 0, 0)]
+        [DataRow(0, 1, 0)]
+        [DataRow(1, 0, 0)]
+        [DataRow(1, 1, 0)]
         public void CheckChiffreDAffaireFranchise(int nbRestaurants, int nbServeurs, int montant)
         {
             // ÉTANT DONNÉ une franchise ayant X restaurants de Y serveurs chacun
             var restaurants = new List<Restaurant>();
-            for(int i = 0; i < nbRestaurants; i++)
+            for (int i = 0; i < nbRestaurants; i++)
             {
                 var restaurant = new Restaurant();
                 for (int j = 0; j < nbServeurs; j++)
@@ -37,7 +41,8 @@ namespace LeGrandRestaurantTest
             }
 
             // ALORS le chiffre d'affaires de la franchise est X * Y * Z
-            Assert.That(franchise.getChiffreDAffaire(), Is.EqualTo(nbRestaurants * nbServeurs * montant));
+            Assert.AreEqual(franchise.getChiffreDAffaire(), franchise.Equals(nbRestaurants * nbServeurs * montant));
         }
     }
 }
+
