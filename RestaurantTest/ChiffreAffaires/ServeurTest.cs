@@ -1,25 +1,30 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using System;
 using LeGrandRestaurant;
-
-namespace LeGrandRestaurantTest
+namespace MS
 {
-    [TestFixture]
+    [TestClass]
     public class ServeurTest
     {
-        [Test]
+        private const string Expected = "Hello World!";
+        [TestMethod]
         public void GetServeurChiffreDAffaire_ReturnsZero()
         {
-            // etant donné un nouveau serveur
-            var serveur = new Serveur();
+            using (var sw = new StringWriter())
+            {
+                // etant donné un nouveau serveur
+                var serveur = new Serveur();
 
-            // quand on récupère son chiffre d'affaire
-            var chiffreAffaire = serveur.getChiffreDAffaire();
+                // quand on récupère son chiffre d'affaire
+                var chiffreAffaire = serveur.getChiffreDAffaire();
 
-            // alors celui ci est a 0
-            Assert.That(chiffreAffaire, Is.EqualTo(0));
+                // alors celui ci est a 0
+                Assert.AreEqual(chiffreAffaire, serveur.Equals(0));
+            }
+
         }
-
-        [Test]
+        [TestMethod]
         public void ServeurGetCommande_GetChiffreDAffaireReturnsCommande()
         {
             // etant donné un nouveau serveur
@@ -30,24 +35,23 @@ namespace LeGrandRestaurantTest
             serveur.prendCommande(commande);
 
             // alors son chiffre d'affaire est le montant de celle-ci
-            Assert.That(serveur.getChiffreDAffaire(), Is.EqualTo(commande.getMontant()));
+            Assert.AreEqual(serveur.getChiffreDAffaire(), serveur.Equals(commande.getMontant()));
         }
-		
-		[Test]
+        [TestMethod]
         public void GetChiffreDAffaireReturnsCommande()
         {
             //ÉTANT DONNÉ un serveur ayant déjà pris une commande
-			var serveur = new Serveur();
-			var commande1 = new Commande(5);
-			serveur.prendCommande(commande1);
-			
-			//QUAND il prend une nouvelle commande
-			var commande2 = new Commande(10);
-			serveur.prendCommande(commande2);
-			
-			//ALORS son chiffre d'affaires est la somme des deux commandes
-			var sommeCommandes = commande1.getMontant() + commande2.getMontant();
-			Assert.That(serveur.getChiffreDAffaire(), Is.EqualTo(sommeCommandes));
+            var serveur = new Serveur();
+            var commande1 = new Commande(5);
+            serveur.prendCommande(commande1);
+
+            //QUAND il prend une nouvelle commande
+            var commande2 = new Commande(10);
+            serveur.prendCommande(commande2);
+
+            //ALORS son chiffre d'affaires est la somme des deux commandes
+            var sommeCommandes = commande1.getMontant() + commande2.getMontant();
+            Assert.AreEqual(serveur.getChiffreDAffaire(), serveur.Equals(sommeCommandes));
         }
     }
 }

@@ -1,13 +1,14 @@
 ﻿using LeGrandRestaurant;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Collections.Generic;
 
-namespace LeGrandRestaurantTest
+namespace MS
 {
-    [TestFixture]
-    class MenuTest
+    [TestClass]
+    class TestMenu
     {
-        [Test]
+        [TestMethod]
         public void CarteFranchise()
         {
             // ÉTANT DONNE un restaurant ayant le statut de filiale d'une franchise
@@ -24,7 +25,7 @@ namespace LeGrandRestaurantTest
             Assert.AreEqual(nouveauPrix, prix);
         }
 
-        [Test]
+        [TestMethod]
         public void ConflitRestaurantFranchise()
         {
             //ÉTANT DONNE un restaurant appartenant à une franchise et définissant un menu ayant un plat
@@ -43,7 +44,7 @@ namespace LeGrandRestaurantTest
             Assert.AreEqual(prixPlatActuel, prixPlat);
         }
 
-        [Test]
+        [TestMethod]
         public void PlatsIdentiquesFranchiseRestaurant()
         {
             // ÉTANT DONNE un restaurant appartenant à une franchise et définissant un menu ayant un plat

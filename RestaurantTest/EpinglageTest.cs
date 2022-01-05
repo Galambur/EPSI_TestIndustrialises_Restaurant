@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace MS
 {
-    [Test]
+    [TestClass]
     class TestEpinglage
     {
-        [Test]
+        [TestMethod]
         public void ServeurEpinglé()
         {
             // ÉTANT DONNE un serveur ayant pris une commande

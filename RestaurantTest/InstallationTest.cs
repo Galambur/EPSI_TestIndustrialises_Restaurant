@@ -1,14 +1,15 @@
-﻿using NUnit.Framework;
+﻿
 using LeGrandRestaurant;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 
 namespace LeGrandRestaurantTest
 {
-    [TestFixture]
-    class InstallationTest
+    [TestClass]
+    class TestInstallation
     {
-        [Test]
+        [TestMethod]
         public void AffectationClient()
         {
             // ÉTANT DONNE une table dans un restaurant ayant débuté son service
@@ -20,10 +21,10 @@ namespace LeGrandRestaurantTest
             table.installerClient();
 
             // ALORS cette table n'est plus sur la liste des tables libres du restaurant
-            Assert.False(table.estLibre);
+            Assert.IsFalse(table.estLibre);
         }
 
-        [Test]
+        [TestMethod]
         public void DesaffectationClient()
         {
             // ÉTANT DONNE une table occupée par un client
@@ -37,10 +38,10 @@ namespace LeGrandRestaurantTest
             table.liberer();
 
             // ALORS cette table n'est plus sur la liste des tables libres du restaurant
-            Assert.True(table.estLibre);
+            Assert.IsTrue(table.estLibre);
         }
 
-        [Test]
+        [TestMethod]
         public void AlreadyPresentClient()
         {
             // ÉTANT DONNE une table occupée par un client
@@ -51,10 +52,10 @@ namespace LeGrandRestaurantTest
             void Act() => table.installerClient();
 
             // ALORS une exception est lancée
-            Assert.Throws<InvalidOperationException>(Act);
+            Assert.ThrowsException<InvalidOperationException>(Act);
         }
 
-        [Test]
+        [TestMethod]
         public void NextFreeTable()
         {
             // ÉTANT DONNÉ un restaurant ayant deux tables, dont une occupée
@@ -74,7 +75,7 @@ namespace LeGrandRestaurantTest
             Assert.AreEqual(tableLibre, tableChoisie);
         }
 
-        [Test]
+        [TestMethod]
         public void ServiceEnd()
         {
             // ÉTANT DONNE un restaurant ayant une table occupée par un client
@@ -87,10 +88,10 @@ namespace LeGrandRestaurantTest
             restaurant.TerminerService();
 
             // ALORS elle est libérée
-            Assert.True(table.estLibre);
+            Assert.IsTrue(table.estLibre);
         }
 
-        [Test]
+        [TestMethod]
         public void NoFreeTable()
         {
             // ÉTANT DONNÉ un restaurant ayant deux tables, toutes occupées
@@ -104,7 +105,7 @@ namespace LeGrandRestaurantTest
             var tablesLibres = restaurant.rechercherTablesLibres();
 
             // ALORS une collection vide est renvoyée
-            Assert.IsEmpty(tablesLibres);
+            Assert.IsNull(tablesLibres);
         }
     }
 }
