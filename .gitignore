@@ -19,6 +19,10 @@ Thumbs.db
 *.ilk
 *.log
 *.dll
+*.cache
+*.json
+*.targets
+*.props
 [Bb]in
 [Dd]ebug*/
 *.lib
