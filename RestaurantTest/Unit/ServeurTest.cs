@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace RestaurantTest.Unit
 {
     [TestFixture]
-    public partial class DebutServiceTest
+    public partial class ServeurTest
     {
     }
 }
