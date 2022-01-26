@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YuQm4AccLms0dPvJqaRGjDIYEqwHiAzlEpMDESJTaTV2MsjQxUZlWOkh0L7omLmQ3PGP+2XPa2nue/j7om1zPg==",
+  "dgSpecHash": "OmOx5Htyi/YpoNU6LPjhx+Ki4o4X+/u+vl9ksyYBYpmDHhk8rA93zVg6wtDL2ZABGZynF2DNXwA5f8HIFCMdPQ==",
   "success": true,
   "projectFilePath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gaell\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

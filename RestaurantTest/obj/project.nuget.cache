@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HU7vOuYmwfz+YsrH4HB2Cv4voIiiQZJg2Y/H8BbgEt6Jbatg8F5V0pQBoWlDgV9yjZzMNiDro3PlBPHrJN7oiA==",
+  "dgSpecHash": "6CjjSNT+FTpT9JJr9/mC/3fcVGFrL+XuoEbegEFJHQxLLPgRtMSn2Tz6JRrY6P6BiJnQfBIKnHPNUvGsfj/oig==",
   "success": true,
   "projectFilePath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\gaell\\.nuget\\packages\\microsoft.testplatform.testhost\\16.9.4\\microsoft.testplatform.testhost.16.9.4.nupkg.sha512",
     "C:\\Users\\gaell\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\gaell\\.nuget\\packages\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
+    "C:\\Users\\gaell\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
     "C:\\Users\\gaell\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\gaell\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\gaell\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
