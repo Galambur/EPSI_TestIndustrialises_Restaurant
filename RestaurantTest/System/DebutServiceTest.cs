@@ -3,7 +3,7 @@
 namespace LeGrandRestaurantTest
 {
     [TestFixture]
-    class DebutServiceTest
+    public partial class DebutServiceTest
     {
     }
 }

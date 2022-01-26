@@ -18,10 +18,4 @@
     <ProjectReference Include="..\Restaurant\LeGrandRestaurant.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Integration\" />
-    <Folder Include="Unit\" />
-    <Folder Include="Recipe\" />
-  </ItemGroup>
-
 </Project>
