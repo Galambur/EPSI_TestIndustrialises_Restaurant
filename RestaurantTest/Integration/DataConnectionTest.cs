@@ -1,13 +1,20 @@
 ﻿using MySqlConnector;
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using LeGrandRestaurant;
 
-namespace LeGrandRestaurant
+namespace LeGrandRestaurantTest
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+	[TestFixture]
+	class DataConnectionTest
+	{
+		[Test]
+		public void DBMySQLUtilsTest()
+		{
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
       try
@@ -26,6 +33,6 @@ namespace LeGrandRestaurant
         // Disposez un objet, libérez des ressources.
         conn.Dispose();
       }
-    }
-    }
+		}
+	}
 }
