@@ -13,26 +13,39 @@ namespace LeGrandRestaurantTest
 	class DataConnectionTest
 	{
 		[Test]
-		public void DBMySQLUtilsTest()
+		public void DBConnection()
 		{
+      // ÉTANT DONNÉ une base de donnée restaurant
       MySqlConnection conn = DBUtils.GetDBConnection();
+
+      // QUAND on ouvre la connection
       conn.Open();
-      try
-      {
-        Querrys.Employee(conn);
-      }
-      catch (Exception e)
-      {
-        Console.WriteLine("Error: " + e);
-        Console.WriteLine(e.StackTrace);
-      }
-      finally
-      {
-        // Terminez la connexion.
-        conn.Close();
-        // Disposez un objet, libérez des ressources.
-        conn.Dispose();
-      }
+
+      // ALORS l'état de connection est ouverte
+      Assert.AreEqual(System.Data.ConnectionState.Open, conn.State);
+
+      // Fin du programme
+      conn.Close();
+      conn.Dispose();
 		}
-	}
+
+    [Test]
+    public void DB()
+    {
+      // ÉTANT DONNÉ un restaurant enregistré
+      MySqlConnection conn = DBUtils.GetDBConnection();
+
+      // QUAND on ouvre la connection
+      conn.Open();
+
+      // ALORS l'état de connection est ouverte
+      Assert.AreEqual(System.Data.ConnectionState.Open, conn.State);
+
+      // Fin du programme
+      conn.Close();
+      conn.Dispose();
+    }
+
+
+  }
 }
