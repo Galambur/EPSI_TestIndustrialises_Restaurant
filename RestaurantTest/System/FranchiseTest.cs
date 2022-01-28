@@ -20,7 +20,7 @@ namespace LeGrandRestaurantTest
                 var restaurant = new Restaurant();
                 for (int j = 0; j < nbServeurs; j++)
                 {
-                    var s = new Serveur();
+                    var s = new ServeurBuilder().Build();
                     restaurant.addServeur(s);
                 }
                 restaurants.Add(restaurant);
@@ -32,7 +32,7 @@ namespace LeGrandRestaurantTest
             {
                 foreach (Serveur serveur in restaurant.getServeurs())
                 {
-                    serveur.prendCommande(new Commande(montant));
+                    serveur.PrendCommande(new Commande(montant));
                 }
             }
 

@@ -26,7 +26,7 @@ namespace LeGrandRestaurant
             return chiffreDaffaire;
         }
 
-        public void prendCommande(Commande commande)
+        public void PrendCommande(Commande commande)
         {
             this._commandes.Add(commande);
         }
