@@ -17,7 +17,7 @@ namespace LeGrandRestaurantTest
 			var restaurant = new Restaurant();
 			for(int i = 0; i < nombreSeveurs; i++)
             {
-				var serveur = new Serveur();
+				var serveur = new ServeurBuilder().Build();
 				restaurant.addServeur(serveur);
             }
 			var franchise = new Franchise(new List<Restaurant>() { restaurant });
@@ -25,7 +25,7 @@ namespace LeGrandRestaurantTest
 			// QUAND tous les serveurs prennent une commande d'un montant Y
 			foreach(var serveur in restaurant.getServeurs())
             {
-				serveur.prendCommande(new Commande(montant));
+				serveur.PrendCommande(new Commande(montant));
             }
 
 			// ALORS le chiffre d'affaires de la franchise est X * Y
