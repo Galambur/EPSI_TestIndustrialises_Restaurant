@@ -30,22 +30,24 @@ namespace LeGrandRestaurantTest
 		}
 
     [Test]
-    public void DB()
+    public void DB_Restaurant_Insert_Test()
     {
-      // ÉTANT DONNÉ un restaurant enregistré
-      MySqlConnection conn = DBUtils.GetDBConnection();
+      // ÉTANT DONNÉ une donnée un restaurant à enregistrer et aucune exception
+      var restaurant = new DB_Restaurant_Test().GenerateMockRestaurant();
+      
+      Exception ex = null;
 
-      // QUAND on ouvre la connection
-      conn.Open();
+      // QUAND on insère le restaurant;
+      TestDelegate act = () => DB_Restaurant.InsertRestaurant(restaurant);
 
-      // ALORS l'état de connection est ouverte
-      Assert.AreEqual(System.Data.ConnectionState.Open, conn.State);
+
+      // ALORS aucune erreur est détecté.
+      Assert.AreEqual(null, ex);
+      Assert.Throws<Exception>(act);
 
       // Fin du programme
-      conn.Close();
-      conn.Dispose();
+      new DB_Restaurant_Test().Dispose();
     }
-
 
   }
 }
