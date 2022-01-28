@@ -31,8 +31,13 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
                 "projectPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
+=======
+              "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
+                "projectPath": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj"
+>>>>>>> ea9a844 (Liste Palt with test system)
               }
             }
           }
@@ -83,6 +88,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
@@ -102,6 +108,30 @@
         "configFilePaths": [
           "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+        "projectName": "LeGrandRestaurant",
+        "projectPath": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+        "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> ea9a844 (Liste Palt with test system)
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -146,7 +176,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+>>>>>>> ea9a844 (Liste Palt with test system)
         }
       }
     }
