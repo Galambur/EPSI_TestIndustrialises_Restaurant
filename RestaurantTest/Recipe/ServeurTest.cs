@@ -1,5 +1,6 @@
 ﻿using LeGrandRestaurant;
 using NUnit.Framework;
+using System.Linq;
 
 namespace LeGrandRestaurantTest
 {
@@ -24,31 +25,28 @@ namespace LeGrandRestaurantTest
         {
             var serveur1 = new ServeurBuilder().Build();
             var serveur2 = new ServeurBuilder().Build();
-            var table1 = new Table();
-            var table2 = new Table();
-            var table3 = new Table();
-            var restaurant = new Restaurant(table1, table2, table3);
+            var tables = new TableGenerator().Generate(3).ToArray();
+            var restaurant = new Restaurant(tables);
 
             // commande 1
             restaurant.debuterService();
-            table1.installerClient();
+            tables[0].installerClient();
             var commande1 = new Commande(12);
             serveur1.PrendCommande(commande1);
 
             // commande 2
-            table2.installerClient();
+            tables[1].installerClient();
             var commande2 = new Commande(25);
             serveur2.PrendCommande(commande2);
 
             // la table 1 se libère, et de nouveaux clients arrivent
-            table1.liberer();
-            table1.installerClient();
+            tables[0].liberer();
+            tables[0].installerClient();
             var commande3 = new Commande(8.5);
             serveur2.PrendCommande(commande3);
 
-
             // commande 4
-            table3.installerClient();
+            tables[2].installerClient();
             var commande4 = new Commande(25);
             serveur1.PrendCommande(commande4);
 
