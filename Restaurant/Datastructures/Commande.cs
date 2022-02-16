@@ -4,7 +4,7 @@
     {
         private double _montant;
 
-        public Commande(double montant)
+        public Commande(string v, double montant)
         {
             this._montant = montant;
         }

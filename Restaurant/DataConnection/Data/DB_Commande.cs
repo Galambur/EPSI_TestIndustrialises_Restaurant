@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using LeGrandRestaurant;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,19 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeGrandRestaurant
+namespace LeGrandCommande
 {
-	public class DB_Restaurant : Restaurant
+	public class DB_Commande : Commande
 	{
-		private string nom;
-
-		public string Nom
+		public DB_Commande(string v, double v) 
 		{
-			get { return nom; }
-			set { nom = value; }
+
+		}
+    private string prenom;
+
+		public string Prenom
+		{
+			get { return prenom; }
+			set { prenom = value; }
 		}
 
-		private int id;
+    private string nom;
+
+    public string Nom
+    {
+      get { return nom; }
+      set { nom = value; }
+    }
+
+    private int id;
 
 		public int Id
 		{
@@ -27,21 +40,22 @@ namespace LeGrandRestaurant
 			private set { id = value; }
 		}
 
-    private static DB_Restaurant read(DbDataReader reader)
+    private static DB_Commande read(DbDataReader reader)
 		{
-      var restaurant = new DB_Restaurant();
-      restaurant.Id = reader.GetInt32(reader.GetOrdinal("id"));
-      restaurant.Nom = reader.GetString(reader.GetOrdinal("nom"));
-      return restaurant;
+      var commande = new DB_Commande();
+      commande.Id = reader.GetInt32(reader.GetOrdinal("id"));
+      commande.Prenom = reader.GetString(reader.GetOrdinal("prenom"));
+      commande.Nom = reader.GetString(reader.GetOrdinal("nom"));
+      return commande;
 		}
 
-		public static void DeleteRestaurantByName(string nom)
+		public static void DeleteCommandeByName(string nom)
 		{
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
       try
       {
-        string sql = "DELETE FROM `restaurant` WHERE nom = @Nom";
+        string sql = "DELETE FROM `commande` WHERE nom = @Nom";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -69,13 +83,13 @@ namespace LeGrandRestaurant
       }
     }
 
-		public static void GetAllRestaurant()
+		public static void GetAllCommande()
     {
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
 			try
 			{
-        string sql = "SELECT * FROM `restaurant`";
+        string sql = "SELECT * FROM `commande`";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -84,17 +98,17 @@ namespace LeGrandRestaurant
         cmd.Connection = conn;
         cmd.CommandText = sql;
 
-        List<DB_Restaurant> restaurants = new List<DB_Restaurant>();
+        List<DB_Commande> commandes = new List<DB_Commande>();
         using (DbDataReader reader = cmd.ExecuteReader())
         {
           if (reader.HasRows)
           {
             while (reader.Read())
             {
-              var restaurant = read(reader);
-              restaurants.Add(restaurant);
+              var commande = read(reader);
+              commandes.Add(commande);
 
-              Console.WriteLine(restaurant);
+              Console.WriteLine(commande);
             }
           }
         }
@@ -111,13 +125,13 @@ namespace LeGrandRestaurant
     }
 
 
-    public static void InsertRestaurant(DB_Restaurant restaurant)
+    public static DB_Commande InsertCommande(DB_Commande commande)
     {
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
       try
       {
-        string sql = "INSERT INTO `restaurant`(`nom`) VALUES (@Nom)";
+        string sql = "INSERT INTO `commande`(`nom`,`prenom`) VALUES (@Nom, @prenom)";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -126,20 +140,20 @@ namespace LeGrandRestaurant
         cmd.Connection = conn;
         cmd.CommandText = sql;
 
-        // Créez un objet Paramètre.
-        MySqlParameter gradeParam = new MySqlParameter("@grade", SqlDbType.Int);
-        gradeParam.Value = 3;
-        cmd.Parameters.Add(gradeParam);
+        // Ajoutez le paramètre @highSalary (Écrire plus court).
+        MySqlParameter prenomParam = cmd.Parameters.Add("@Prenom", DbType.String);
+        prenomParam.Value = commande.Prenom;
 
         // Ajoutez le paramètre @highSalary (Écrire plus court).
         MySqlParameter nomParam = cmd.Parameters.Add("@Nom", DbType.String);
-        nomParam.Value = restaurant.Nom;
+        nomParam.Value = commande.Nom;
 
         // Exécutez la Commande (Utilisez pour supprimer, insérer, mettre à jour).
         int rowCount = cmd.ExecuteNonQuery();
+        commande.Id = (int)cmd.LastInsertedId;
 
         Console.WriteLine("Row Count affected = " + rowCount);
-
+        
       }
       catch (Exception ex)
       {
@@ -150,6 +164,11 @@ namespace LeGrandRestaurant
         conn.Close();
         conn.Dispose();
 			}
+      if (commande.Id != null)
+        return commande;
+      else
+        return commande;
+
     }
 
 
@@ -158,7 +177,7 @@ namespace LeGrandRestaurant
 			return 
         "--------------" +
         "\nId  : " + this.Id +
-        "\nNom : " + this.Nom;
+        "\nNom : " + this.Prenom;
 		}
 	}
 }

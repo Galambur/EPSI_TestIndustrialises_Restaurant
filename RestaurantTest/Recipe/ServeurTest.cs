@@ -55,6 +55,5 @@ namespace LeGrandRestaurantTest
             var montantTotal = commande1.getMontant() + commande4.getMontant();
             Assert.AreEqual(serveur1.getChiffreDAffaire(), montantTotal);
         }
-
     }
 }
