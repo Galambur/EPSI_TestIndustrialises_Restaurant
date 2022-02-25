@@ -50,48 +50,20 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\maxime\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
-    "C:\\Users\\utilisateur\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
->>>>>>> ea9a844 (Liste Palt with test system)
+    "C:\\Users\\gaell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+      "projectUniqueName": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
       "projectName": "LeGrandRestaurant",
-      "projectPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
-      "packagesPath": "C:\\Users\\maxime\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\obj\\",
+      "projectPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+      "packagesPath": "C:\\Users\\gaell\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gaell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-      "projectUniqueName": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
-      "projectName": "LeGrandRestaurant",
-      "projectPath": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
-      "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\utilisateur\\Documents\\EPSI B3\\Maximilius\\Git\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
->>>>>>> ea9a844 (Liste Palt with test system)
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -136,11 +108,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> ea9a844 (Liste Palt with test system)
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
