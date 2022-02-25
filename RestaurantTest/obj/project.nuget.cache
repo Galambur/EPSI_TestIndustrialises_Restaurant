@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "VYjcpHCcf46AVJjFWla3pL7syXdwFZ1F+B0OM41Qu0hTpsmYFX5MHLdeBHO4FKVBvGMenKx8xjcB09BZwhvZ7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\RestaurantTest\\RestaurantTest.csproj",
+  "projectFilePath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\RestaurantTest\\RestaurantTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxime\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\maxime\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",

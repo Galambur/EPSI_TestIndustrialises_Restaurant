@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeGrandRestaurant
+﻿namespace LeGrandRestaurant
 {
     public class Plat
     {
+        public string nom;
+        public double prix;
+
+        public Plat() { }
+
+        public Plat(string nom, double prix)
+        {
+            this.nom = nom;
+            this.prix = prix;
+        }
     }
 }

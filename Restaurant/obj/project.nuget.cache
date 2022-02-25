@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "gUxbNj9Pww684XuCtXR+4lzgulDaB5nwfjRw6wefnrm5jVGBQ9Uu+p59E3BzwF06qWX4pmJaYVOCWCONtOeLaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxime\\source\\repos\\EthicalCoding\\EPSI_TestIndustrialises_Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
+  "projectFilePath": "D:\\Documents\\EPSI\\B3\\Tests et industrialisation\\Restaurant\\Restaurant\\LeGrandRestaurant.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxime\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\maxime\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
