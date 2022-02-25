@@ -11,6 +11,7 @@ namespace LeGrandRestaurant
 {
 	public class DB_Table : Table
 	{
+		#region Propriété
 		private int id;
 
 		public int Id
@@ -19,7 +20,10 @@ namespace LeGrandRestaurant
 			private set { id = value; }
 		}
 
-    private static DB_Table read(DbDataReader reader)
+		#endregion
+
+
+		private static DB_Table read(DbDataReader reader)
 		{
       var table = new DB_Table();
       table.Id = reader.GetInt32(reader.GetOrdinal("id"));
@@ -147,6 +151,16 @@ namespace LeGrandRestaurant
       return
         "--------------" +
         "\nId  : " + this.Id;
+		}
+
+		public void installerClient()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void liberer()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

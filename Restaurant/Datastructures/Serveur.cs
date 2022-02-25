@@ -2,38 +2,38 @@
 
 namespace LeGrandRestaurant
 {
-    public class Serveur
-    {
-        private readonly IList<Commande> _commandes;
+	public class Serveur : IServeur
+	{
+		public IList<Commande> Commandes { get; set; }
 
-        public Serveur()
-        {
-            this._commandes = new List<Commande>();
-        }
+		public Serveur()
+		{
+			this.Commandes = new List<Commande>();
+		}
 
-        public Serveur(IList<Commande> commandes)
-        {
-            this._commandes = commandes;
-        }
+		public Serveur(IList<Commande> commandes)
+		{
+			this.Commandes = commandes;
+		}
 
-        public double getChiffreDAffaire()
-        {
-            double chiffreDaffaire = 0;
-            foreach(var commande in _commandes)
-            {
-                chiffreDaffaire = chiffreDaffaire + commande.getMontant();
-            }
-            return chiffreDaffaire;
-        }
+		public double getChiffreDAffaire()
+		{
+			double chiffreDaffaire = 0;
+			foreach (var commande in Commandes)
+			{
+				chiffreDaffaire = chiffreDaffaire + commande.getMontant();
+			}
+			return chiffreDaffaire;
+		}
 
-        public void PrendCommande(Commande commande)
-        {
-            this._commandes.Add(commande);
-        }
+		public void PrendCommande(Commande commande)
+		{
+			this.Commandes.Add(commande);
+		}
 
-        public IList<Commande> GetCommandes()
-        {
-            return _commandes;
-        }
-    }
+		public IList<Commande> GetCommandes()
+		{
+			return Commandes;
+		}
+	}
 }

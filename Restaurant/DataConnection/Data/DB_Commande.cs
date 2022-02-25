@@ -8,39 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeGrandCommande
+namespace LeGrandRestaurant
 {
-	public class DB_Commande : Commande,DB_ITable
+	public class DB_Commande : ICommande
 	{
-		public DB_Commande(string v, double v) 
-		{
+		#region Propriété
+		public int Id { get; set; }
+		public int IdServeur { get; set; }
+		public int idTable { get; set; }
+		public double Montant { get ; set ; }
+    public IList<Plat> ListePlat { get ; set ; }
+    #endregion
 
-		}
-    private string prenom;
+    #region Interface 
 
-		public string Prenom
-		{
-			get { return prenom; }
-			set { prenom = value; }
-		}
-
-    private string nom;
-
-    public string Nom
+    public double getMontant()
     {
-      get { return nom; }
-      set { nom = value; }
+      throw new NotImplementedException();
     }
 
-    private int id;
+    public void setListPLat(IList<Plat> plats)
+    {
+      throw new NotImplementedException();
+    }
 
-		public int Id
-		{
-			get { return id; }
-			private set { id = value; }
-		}
+    public IList<Plat> getListePlats()
+    {
+      throw new NotImplementedException();
+    }
+		#endregion
 
-    private static DB_Commande read(DbDataReader reader)
+		#region Private Method
+		private static DB_Commande read(DbDataReader reader)
 		{
       var commande = new DB_Commande();
       commande.Id = reader.GetInt32(reader.GetOrdinal("id"));
@@ -48,7 +47,9 @@ namespace LeGrandCommande
       commande.Nom = reader.GetString(reader.GetOrdinal("nom"));
       return commande;
 		}
+		#endregion
 
+		#region CRUD
 		public static void DeleteCommandeByName(string nom)
 		{
       MySqlConnection conn = DBUtils.GetDBConnection();
@@ -179,5 +180,8 @@ namespace LeGrandCommande
         "\nId  : " + this.Id +
         "\nNom : " + this.Prenom;
 		}
+
+		#endregion
+
 	}
 }

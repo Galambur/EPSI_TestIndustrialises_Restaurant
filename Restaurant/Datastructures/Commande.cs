@@ -2,27 +2,27 @@
 
 namespace LeGrandRestaurant
 {
-    public class Commande
-    {
-        private double _montant;
-        private IList<Plat> _listePlat;
+	public class Commande : ICommande
+	{
+		public double Montant { get; set; }
+		public IList<Plat> ListePlat { get; set; }
 
-        public Commande(double montant)
-        {
-            this._montant = montant;
-        }
+		public Commande(double montant)
+		{
+			this.Montant = montant;
+		}
 
-        public double getMontant()
-        {
-            return this._montant;
-        }
-        public void setListPLat(IList<Plat> plats)
-        {
-            this._listePlat = plats;
-        }
-        public IList<Plat> getListePlats()
-        {
-            return this._listePlat;
-        } 
-    }
+		public double getMontant()
+		{
+			return this.Montant;
+		}
+		public void setListPLat(IList<Plat> plats)
+		{
+			this.ListePlat = plats;
+		}
+		public IList<Plat> getListePlats()
+		{
+			return this.ListePlat;
+		}
+	}
 }
