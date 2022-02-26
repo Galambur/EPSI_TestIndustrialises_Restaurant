@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeGrandRestaurant
 {
-	interface IServeur
+	public interface IServeur
 	{
     public IList<Commande> Commandes { get; set; }
 

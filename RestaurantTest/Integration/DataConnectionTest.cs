@@ -32,8 +32,9 @@ namespace LeGrandRestaurantTest
     [Test]
     public void DB_Restaurant_Insert_Test()
     {
+      
       // ÉTANT DONNÉ une donnée un restaurant à enregistrer et aucune exception
-      var restaurant = new DB_Restaurant_Test().GenerateMockRestaurant();
+      var restaurant = new DB_Restaurant("testRestaurant");
       
       Exception ex = null;
 
@@ -43,10 +44,10 @@ namespace LeGrandRestaurantTest
 
       // ALORS aucune erreur est détecté.
       Assert.AreEqual(null, ex);
-      Assert.Throws<Exception>(act);
+      Assert.DoesNotThrow(act);
 
       // Fin du programme
-      new DB_Restaurant_Test().Dispose();
+      DB_Restaurant.DeleteRestaurantById(restaurant.Id);
     }
 
   }

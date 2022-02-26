@@ -12,7 +12,7 @@ namespace LeGrandRestaurant
       conn.Open();
       try
       {
-        Querrys.Employee(conn);
+        //Querrys.Employee(conn);
       }
       catch (Exception e)
       {

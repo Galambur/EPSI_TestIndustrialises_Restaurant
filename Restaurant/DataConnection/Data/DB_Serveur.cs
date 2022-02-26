@@ -6,7 +6,7 @@ using System.Data.Common;
 
 namespace LeGrandRestaurant
 {
-	public class DB_Serveur : IServeur
+	public class DB_Serveur 
 	{
 		#region Propriété
 		private string prenom;
@@ -62,7 +62,7 @@ namespace LeGrandRestaurant
 		#region Interface
 		public double getChiffreDAffaire()
 		{
-			var montant = 0;
+			double? montant = 0;
 			MySqlConnection conn = DBUtils.GetDBConnection();
 			conn.Open();
 			try
@@ -88,7 +88,8 @@ namespace LeGrandRestaurant
 					if (reader.HasRows)
 					{
 						reader.Read();
-						montant = reader.GetInt32(reader.GetOrdinal("allMontant"));
+						if(!reader.IsDBNull(reader.GetOrdinal("allMontant")))
+							montant = reader.GetDouble(reader.GetOrdinal("allMontant"));
 						Console.WriteLine(montant);
 					} else
 					{
@@ -105,12 +106,19 @@ namespace LeGrandRestaurant
 				conn.Close();
 				conn.Dispose();
 			}
-			return montant;
+
+
+			return montant.Value;
+
 
 		}
-		public void PrendCommande(Commande commande)
+
+
+
+		public void PrendCommande(DB_Commande commande)
 		{
-			throw new NotImplementedException();
+			commande.IdServeur = this.Id; // On ajoute l'id du serveur qui prend la commande.
+			DB_Commande.InsertCommande(commande);
 		}
 
 		public IList<Commande> GetCommandes()
@@ -120,7 +128,7 @@ namespace LeGrandRestaurant
 		#endregion
 
 
-
+		#region CRUD
 
 		public static void DeleteServeurByName(string nom)
 		{
@@ -139,6 +147,40 @@ namespace LeGrandRestaurant
 
 
 				cmd.Parameters.Add("@Nom", DbType.String).Value = nom;
+
+				// Exécutez Command (Utilisez pour supprimer, insérer, mettre à jour).
+				int rowCount = cmd.ExecuteNonQuery();
+
+				Console.WriteLine("Row Count affected = " + rowCount);
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conn.Close();
+				conn.Dispose();
+			}
+		}
+
+		public static void DeleteServeurById(int id)
+		{
+			MySqlConnection conn = DBUtils.GetDBConnection();
+			conn.Open();
+			try
+			{
+				string sql = "DELETE FROM `serveur` WHERE id = @id";
+
+				// Créez un objet Command.
+				MySqlCommand cmd = new MySqlCommand();
+
+				// Établissez la connexion de la commande.
+				cmd.Connection = conn;
+				cmd.CommandText = sql;
+
+
+				cmd.Parameters.Add("@id", DbType.Int32).Value = id;
 
 				// Exécutez Command (Utilisez pour supprimer, insérer, mettre à jour).
 				int rowCount = cmd.ExecuteNonQuery();
@@ -252,9 +294,8 @@ namespace LeGrandRestaurant
 				"\nNom : " + this.Prenom;
 		}
 
-
-
+		#endregion
 
 	}
 }
-}
+

@@ -15,16 +15,27 @@ namespace LeGrandRestaurant
 		#region Propriété
 		public int Id { get; set; }
 		public int IdServeur { get; set; }
-		public int idTable { get; set; }
+		public int IdTable { get; set; }
 		public double Montant { get ; set ; }
     public IList<Plat> ListePlat { get ; set ; }
-    #endregion
+		#endregion
 
-    #region Interface 
+		#region Constructeur
+		public DB_Commande() { }
+		public DB_Commande(int vidServeur, int vidTable, int vmontant)
+		{
+      IdServeur = vidServeur;
+      IdTable = vidTable;
+      Montant = vmontant;
+		}
+		#endregion
 
-    public double getMontant()
+		#region Interface 
+
+		public double getMontant()
     {
-      throw new NotImplementedException();
+      var selfCommande = DB_Commande.GetCommandeById(Id);
+      return selfCommande.Montant; ;
     }
 
     public void setListPLat(IList<Plat> plats)
@@ -36,27 +47,28 @@ namespace LeGrandRestaurant
     {
       throw new NotImplementedException();
     }
-		#endregion
+    #endregion
 
-		#region Private Method
-		private static DB_Commande read(DbDataReader reader)
-		{
+    #region Private Method
+    private static DB_Commande read(DbDataReader reader)
+    {
       var commande = new DB_Commande();
       commande.Id = reader.GetInt32(reader.GetOrdinal("id"));
-      commande.Prenom = reader.GetString(reader.GetOrdinal("prenom"));
-      commande.Nom = reader.GetString(reader.GetOrdinal("nom"));
+      commande.IdServeur = reader.GetInt32(reader.GetOrdinal("idServeur"));
+      commande.IdTable = reader.GetInt32(reader.GetOrdinal("idTable"));
+      commande.Montant = reader.GetDouble(reader.GetOrdinal("montant"));
       return commande;
-		}
-		#endregion
+    }
+    #endregion
 
-		#region CRUD
-		public static void DeleteCommandeByName(string nom)
+    #region CRUD
+    public static void DeleteAllCommandeByIdServeur(int idServeur)
 		{
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
       try
       {
-        string sql = "DELETE FROM `commande` WHERE nom = @Nom";
+        string sql = "DELETE FROM `commande` WHERE idServeur = @IdServeur";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -66,7 +78,7 @@ namespace LeGrandRestaurant
         cmd.CommandText = sql;
 
 
-        cmd.Parameters.Add("@Nom", DbType.String).Value = nom;
+        cmd.Parameters.Add("@IdServeur", DbType.Int32).Value = idServeur;
 
         // Exécutez Command (Utilisez pour supprimer, insérer, mettre à jour).
         int rowCount = cmd.ExecuteNonQuery();
@@ -84,13 +96,14 @@ namespace LeGrandRestaurant
       }
     }
 
-		public static void GetAllCommande()
+		public static DB_Commande GetCommandeById(int id)
     {
+      DB_Commande commande = new DB_Commande();
       MySqlConnection conn = DBUtils.GetDBConnection();
       conn.Open();
 			try
 			{
-        string sql = "SELECT * FROM `commande`";
+        string sql = "SELECT * FROM `commande` where id=@pId";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -99,18 +112,18 @@ namespace LeGrandRestaurant
         cmd.Connection = conn;
         cmd.CommandText = sql;
 
-        List<DB_Commande> commandes = new List<DB_Commande>();
+        // Ajoutez le paramètre @highSalary (Écrire plus court).
+        MySqlParameter idServeurParam = cmd.Parameters.Add("@pId", DbType.Int32);
+        idServeurParam.Value = id;
+
+        
         using (DbDataReader reader = cmd.ExecuteReader())
         {
           if (reader.HasRows)
           {
-            while (reader.Read())
-            {
-              var commande = read(reader);
-              commandes.Add(commande);
-
-              Console.WriteLine(commande);
-            }
+            reader.Read();
+            commande = read(reader);
+            Console.WriteLine(commande);
           }
         }
       }
@@ -123,6 +136,7 @@ namespace LeGrandRestaurant
         conn.Close();
         conn.Dispose();
 			}
+      return commande;
     }
 
 
@@ -132,7 +146,7 @@ namespace LeGrandRestaurant
       conn.Open();
       try
       {
-        string sql = "INSERT INTO `commande`(`nom`,`prenom`) VALUES (@Nom, @prenom)";
+        string sql = "INSERT INTO `commande`(`idServeur`,`idTable`,`montant`) VALUES (@idServeur, @idTable,@montant)";
 
         // Créez un objet Command.
         MySqlCommand cmd = new MySqlCommand();
@@ -142,12 +156,17 @@ namespace LeGrandRestaurant
         cmd.CommandText = sql;
 
         // Ajoutez le paramètre @highSalary (Écrire plus court).
-        MySqlParameter prenomParam = cmd.Parameters.Add("@Prenom", DbType.String);
-        prenomParam.Value = commande.Prenom;
+        MySqlParameter idServeurParam = cmd.Parameters.Add("@idServeur", DbType.Int32);
+        idServeurParam.Value = commande.IdServeur;
 
         // Ajoutez le paramètre @highSalary (Écrire plus court).
-        MySqlParameter nomParam = cmd.Parameters.Add("@Nom", DbType.String);
-        nomParam.Value = commande.Nom;
+        MySqlParameter idTableParam = cmd.Parameters.Add("@idTable", DbType.Int32);
+        idTableParam.Value = commande.IdTable;
+
+        // Ajoutez le paramètre @highSalary (Écrire plus court).
+        MySqlParameter montantParam = cmd.Parameters.Add("@montant", DbType.Int32);
+        montantParam.Value = commande.Montant;
+
 
         // Exécutez la Commande (Utilisez pour supprimer, insérer, mettre à jour).
         int rowCount = cmd.ExecuteNonQuery();
@@ -175,11 +194,13 @@ namespace LeGrandRestaurant
 
     public override string ToString()
 		{
-			return 
+      return
         "--------------" +
-        "\nId  : " + this.Id +
-        "\nNom : " + this.Prenom;
-		}
+         "\nId  : " + this.Id +
+         "\nId  : " + this.IdServeur +
+         "\nId  : " + this.IdTable +
+         "\nId  : " + this.Montant;
+    }
 
 		#endregion
 

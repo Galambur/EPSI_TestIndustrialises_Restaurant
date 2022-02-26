@@ -2,7 +2,7 @@
 
 namespace LeGrandRestaurant
 {
-	interface ICommande
+	public interface ICommande
 	{
 		public double Montant { get; set; }
 		public IList<Plat> ListePlat { get; set; }

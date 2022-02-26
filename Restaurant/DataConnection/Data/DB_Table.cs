@@ -12,24 +12,32 @@ namespace LeGrandRestaurant
 	public class DB_Table : Table
 	{
 		#region Propriété
-		private int id;
+		public int Id { get; set; }
 
-		public int Id
-		{
-			get { return id; }
-			private set { id = value; }
-		}
+    #endregion
 
-		#endregion
+    #region Iteration 
+    public void installerClient()
+    {
+      throw new NotImplementedException();
+    }
 
+    public void liberer()
+    {
+      throw new NotImplementedException();
+    }
+    #endregion
 
-		private static DB_Table read(DbDataReader reader)
+    #region Method privé
+    private static DB_Table read(DbDataReader reader)
 		{
       var table = new DB_Table();
       table.Id = reader.GetInt32(reader.GetOrdinal("id"));
       return table;
 		}
+		#endregion
 
+		#region CRUD
 		public static void GetAllTable()
     {
       MySqlConnection conn = DBUtils.GetDBConnection();
@@ -153,14 +161,8 @@ namespace LeGrandRestaurant
         "\nId  : " + this.Id;
 		}
 
-		public void installerClient()
-		{
-			throw new NotImplementedException();
-		}
+		#endregion
 
-		public void liberer()
-		{
-			throw new NotImplementedException();
-		}
+
 	}
 }

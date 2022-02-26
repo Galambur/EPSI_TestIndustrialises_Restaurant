@@ -31,20 +31,31 @@ namespace RestaurantTest.Unit
 
         // alors celui ci est a 0
         Assert.That(chiffreAffaire, Is.EqualTo(0));
+
+        // Fin du programme
+        DB_Serveur.DeleteServeurById(serveur.Id);
       }
 
       [Test]
       public void ServeurGetCommande_GetChiffreDAffaireReturnsCommande()
       {
-        // etant donné un nouveau serveur
-        var serveur = new ServeurBuilder().Build();
+        // etant donné un nouveau serveur et une commande
+        var serveur = new DB_Serveur("tprenom", "tnom");
+        var serveurInserted = DB_Serveur.InsertServeur(serveur);
+
+
 
         // quand il prend une commande 
-        var commande = new Commande(20);
+        DB_Commande commande = new DB_Commande() { Montant = 30, IdTable = 0 };
         serveur.PrendCommande(commande);
+        
 
         // alors son chiffre d'affaire est le montant de celle-ci
         Assert.That(serveur.getChiffreDAffaire(), Is.EqualTo(commande.getMontant()));
+
+        // Fin du programme
+        DB_Serveur.DeleteServeurById(serveur.Id);
+        DB_Commande.DeleteAllCommandeByIdServeur(serveur.Id);
       }
 
     }
